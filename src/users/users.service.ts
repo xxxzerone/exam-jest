@@ -19,6 +19,7 @@ export class UsersService {
 
   async findUserById(id: number): Promise<Users> {
     const user = await this.usersRepository.findOneByUserId(id);
+    console.log('findUserById() >>>>>');
     if (!user) {
       throw new NotFoundException('유저가 없습니다.');
     }
